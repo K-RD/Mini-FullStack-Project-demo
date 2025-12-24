@@ -59,8 +59,8 @@ async function startFetchJob({
           params: {
             year: exam_year,
             redg_no: regNo,
-            semester,
-            exam_held
+            semester: semester,
+            exam_held: exam_held
           }
         }
       );
