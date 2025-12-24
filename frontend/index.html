@@ -20,8 +20,8 @@
 
     <div>
         <input type="number" id="admission_year" placeholder="Admission Year (eg: 22)" />
+        <input type="number" id="branch_code" placeholder="Branch Code (eg: 101)" />
         <input type="number" id="college_code" placeholder="College Code (eg: 153)" />
-        <input type="number" id="branch_code" placeholder="Branch Code (eg: 153)" />
         <br><br>
         <input type="number" id="serial_start" placeholder="Serial Start (eg: 1)" />
         <input type="number" id="serial_end" placeholder="Serial End (eg: 50)" />
@@ -41,8 +41,8 @@
             
             const payload = {
                 admission_year: Number(document.getElementById("admission_year").value),
-                college_code: Number(document.getElementById("college_code").value),
                 branch_code: Number(document.getElementById("branch_code").value),
+                college_code: Number(document.getElementById("college_code").value),
                 serial_start: Number(document.getElementById("serial_start").value),
                 serial_end: Number(document.getElementById("serial_end").value),
                 exam_year: Number(document.getElementById("exam_year").value),

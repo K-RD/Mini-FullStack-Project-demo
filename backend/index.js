@@ -26,17 +26,17 @@ app.post("/search", async (req, res) => {
     res.json(result.rows);
 });
 
-function generateRegNo(year, college, branch, serial) {
+function generateRegNo(year, branch, college, serial) {
   const serialStr = serial.toString().padStart(3, "0");
-  return `${year}${college}${branch}${serialStr}`;
+  return `${year}${branch}${college}${serialStr}`;
 }
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function startFetchJob({
   admission_year,
-  college_code,
   branch_code,
+  college_code,
   serial_start,
   serial_end,
   exam_year,
@@ -47,8 +47,8 @@ async function startFetchJob({
 
     const regNo = generateRegNo(
       admission_year,
-      college_code,
       branch_code,
+      college_code,
       serial
     );
 
