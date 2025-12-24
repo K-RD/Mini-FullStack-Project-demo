@@ -6,6 +6,15 @@
 </head>
 
 <body>
+    <h2>Search Student</h2>
+
+    <input type="text" id="name" placeholder="Enter student name" />
+    <button onclick="searchStudent()">Search</button>
+
+<!-- 
+    <h3>Result:</h3>
+    <pre id="result"></pre> -->
+
 
     <h2>Fetch University Results (Raw JSON)</h2>
 
@@ -29,7 +38,7 @@
 
     <script>
         async function fetchResults() {
-
+            
             const payload = {
                 admission_year: Number(document.getElementById("admission_year").value),
                 college_code: Number(document.getElementById("college_code").value),
@@ -40,7 +49,7 @@
                 semester: document.getElementById("semester").value,
                 exam_held: document.getElementById("exam_held").value
             };
-
+            
             const response = await fetch(
                 "https://mini-fullstack-project-demo.onrender.com/api/fetch-results",
                 {
@@ -49,13 +58,28 @@
                     body: JSON.stringify(payload)
                 }
             );
-
+            
             const data = await response.json();
             document.getElementById("result").textContent =
-                JSON.stringify(data, null, 2);
+            JSON.stringify(data, null, 2);
         }
-    </script>
+        </script>
 
+        <script>
+            async function searchStudent() {
+                const name = document.getElementById("name").value;
+    
+                const response = await fetch("https://mini-fullstack-project-demo.onrender.com/search", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name })
+                });
+    
+                const data = await response.json();
+                document.getElementById("result").textContent =
+                    JSON.stringify(data, null, 2);
+            }
+        </script>
 </body>
 
 </html>
