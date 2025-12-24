@@ -8,8 +8,8 @@ This project was created for learning real‑world full‑stack development conc
 
 ## 🚀 Live Demo
 
-* **Frontend (Vercel):** https://<your-frontend-url>.vercel.app
-* **Backend API (Render):** https://<your-backend-url>.onrender.com
+* **Frontend (Vercel):** https://mini-ashen-seven.vercel.app
+* **Backend API (Render):** https://mini-fullstack-project-demo.onrender.com
 
 ---
 
